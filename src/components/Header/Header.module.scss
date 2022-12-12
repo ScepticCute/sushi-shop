@@ -1,0 +1,107 @@
+.wrapper {
+  background-color: var(--second-color);
+}
+
+.header {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  background-color: var(--main-color);
+  border-radius: 50%;
+  padding: 2px;
+  margin-left: 10px;
+
+  &_img {
+    min-width: 100%;
+  }
+}
+
+/* Navigation */
+
+.nav {
+  &_list {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+
+    &_item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+        background-color: var(--button-grey-bg);
+
+      transition: var(--transition);
+
+      border-radius: 33px;
+      border: none;
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      font-weight: 400;
+      font-size: 16px;
+      cursor: pointer;
+
+      box-shadow: var(--box-shadow);
+
+      &:hover {
+        background-color: var(--main-color);
+      }
+      &:hover a {
+        color: var(--second-font-color);  
+      }
+      a {
+        color: var(--main-font-color);
+        text-decoration: none;
+        transition: var(--transition);
+
+      }
+    }
+  }
+}
+
+/* Login/Profile */
+
+.login_button {
+  background-color: var(--button-grey-bg);
+  border-radius: 33px;
+  border: none;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  cursor: pointer;
+  transition: var(--transition);
+
+  &:hover {
+    background-color: var(--main-color);
+    color: var(--second-font-color);  
+  }
+}
+
+/* Cart */
+
+.cart_button {
+  background-color: var(--main-color);
+  color: var(--second-font-color);  
+  border-radius: 33px;
+  border: none;
+  width: 100px;
+  height: 50px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 20px;
+  transition: var(--transition);
+
+  &:active {
+    color: rgb(255, 231, 187);
+  }
+}

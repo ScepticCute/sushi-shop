@@ -1,0 +1,43 @@
+@import 'normalize.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+  /* Global Roots */
+
+:root {
+  --main-color: rgb(255, 105, 0);
+  --second-color: #FFFAFA;
+  --max-width: 1280px;
+  --bg-color:  #f1f2f2;
+
+  --button-light-bg: rgb(255, 240, 230);
+  --button-grey-bg: rgb(226, 226, 233);
+  --button-light-color: rgb(209, 87, 0);
+  --button-grey-color: rgb(171, 173, 186);
+
+  --transition: 0.3s ease-in;
+
+  --box-shadow: 2px 2px 8px 0px rgba(34, 60, 80, 0.1);
+
+  --main-font-color: black;
+  --second-font-color: rgb(255, 255, 255);
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  color: rgb(24,24,24);
+
+  background-color: var(--bg-color);
+}
+
+code {
+  font-family: 'Roboto', sans-serif, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
