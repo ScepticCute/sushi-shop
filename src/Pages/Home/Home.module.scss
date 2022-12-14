@@ -2,49 +2,6 @@
   .content {
     max-width: var(--max-width);
     margin: 0 auto;
-
-    /* Фильтры, сортировка */
-
-    .filter_wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .filters {
-      display: flex;
-      margin: 20px 0;
-    }
-
-    .filter {
-      padding: 20px;
-      background-color: var(--button-grey-bg);
-      border-radius: 33px;
-      border: none;
-      text-align: center;
-      font-weight: 500;
-      margin: 0 10px;
-      font-size: 16px;
-      cursor: pointer;
-      transition: var(--transition);
-
-      &:hover {
-        background-color: var(--main-color);
-      }
-    }
-
-    .sort {
-      color: var(--main-color);
-      font-weight: 700;
-      cursor: pointer;
-      border: 1px solid var(--main-color);
-      padding: 4px 10px;
-
-      border-radius: 30px;
-    }
-
-    /* Сегмент с товаром */
-
     .sushi {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));

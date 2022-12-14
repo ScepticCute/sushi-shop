@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
+import { ISushi } from '../../models/ISushi';
 
 export interface ICartState {
-  sushi: object[] | [];
+  sushi: ISushi[] | [];
   sum: number;
 }
 
@@ -15,8 +16,11 @@ export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addToCart(state, action: PayloadAction<object[] | []>) {
-      state.sushi = action.payload;
+    addToCart(state, action: PayloadAction<ISushi>) {
+      state.sushi = [...state.sushi, action.payload];
+    },
+    removeFromCart(state, action: PayloadAction<ISushi>) {
+      state.sushi.filter((item) => item.id !== action.payload.id);
     },
   },
 });

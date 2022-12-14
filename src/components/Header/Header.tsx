@@ -6,28 +6,25 @@ import { Link } from 'react-router-dom';
 export const Header: React.FC = () => {
   const [isLogged, setLogged] = React.useState(false);
 
-  const onClickLogin = () => {
+  const onClickLogin: React.MouseEventHandler<HTMLButtonElement> = () => {
     setLogged(!isLogged);
   };
 
   return (
     <div className={styles.wrapper}>
       <header className={styles.header}>
-        <a href="/" className={styles.logo}>
+        <Link to="/" className={styles.logo}>
           <img src={sushiLogo} className={styles.logo_img} />
-        </a>
+        </Link>
 
         <nav className={styles.nav}>
           <ul className={styles.nav_list}>
-            <li className={styles.nav_list_item}>
-              <Link to="/">Home</Link>
-            </li>
-            <li className={styles.nav_list_item}>
-              <Link to="/news">News</Link>
-            </li>
-            <li className={styles.nav_list_item}>
-              <Link to="/contact">Contact</Link>
-            </li>
+            <Link to="/">
+              <li className={styles.nav_list_item}>Home</li>
+            </Link>
+            <Link to="/contact">
+              <li className={styles.nav_list_item}>Contact</li>
+            </Link>
           </ul>
         </nav>
 
@@ -35,7 +32,7 @@ export const Header: React.FC = () => {
           <div className={styles.profile}></div>
         ) : (
           <div className={styles.login}>
-            <button onClick={() => onClickLogin()} className={styles.login_button}>
+            <button onClick={(e) => onClickLogin(e)} className={styles.login_button}>
               Войти
             </button>
           </div>

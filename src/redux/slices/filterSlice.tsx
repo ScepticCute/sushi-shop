@@ -1,12 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
-export interface IFilterState {
-  value: number;
+interface IFilter {
+  limit: number;
+  sort: string;
+  order?: string;
+  page?: number;
+  filter?: string;
 }
 
-const initialState: IFilterState = {
-  value: 0,
+const initialState: IFilter = {
+  limit: 4,
+  sort: 'rating',
+  order: 'desc',
+  page: 1,
 };
 
 export const filterSlice = createSlice({
@@ -14,7 +21,7 @@ export const filterSlice = createSlice({
   initialState,
   reducers: {
     func(state, action: PayloadAction<number>) {
-      state.value = action.payload;
+      state.limit = action.payload;
     },
   },
 });

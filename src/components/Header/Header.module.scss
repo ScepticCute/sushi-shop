@@ -30,6 +30,13 @@
     list-style: none;
     gap: 40px;
 
+    a {
+      color: var(--main-font-color);
+      text-decoration: none;
+      transition: var(--transition);
+
+    }
+
     &_item {
       display: flex;
       align-items: center;
@@ -51,15 +58,7 @@
 
       &:hover {
         background-color: var(--main-color);
-      }
-      &:hover a {
-        color: var(--second-font-color);  
-      }
-      a {
-        color: var(--main-font-color);
-        text-decoration: none;
-        transition: var(--transition);
-
+        color: var(--second-font-color); 
       }
     }
   }

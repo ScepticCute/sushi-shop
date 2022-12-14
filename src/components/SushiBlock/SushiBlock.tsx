@@ -1,15 +1,8 @@
 import React from 'react';
+import { ISushi } from '../../models/ISushi';
 import styles from './SushiBlock.module.scss';
 
-interface IProps {
-  id?: number;
-  title?: string;
-  rating?: number;
-  imageUrl?: string;
-  category?: [];
-} // почини
-
-export const SushiBlock: React.FC = (props: IProps) => {
+export const SushiBlock: React.FC<ISushi> = (props) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.sushi_img_wrapper}>
