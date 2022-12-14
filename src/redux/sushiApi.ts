@@ -5,7 +5,7 @@ export const sushiApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://6396d95486d04c76338279f7.mockapi.io/' }),
   endpoints: (build) => ({
     getSushi: build.query({
-      query: (limit = '') => `sushi?${limit ? `page=1&limit=${limit}` : ''}`,
+      query: ({ limit = '' }) => `sushi?${limit ? `page=1&limit=${limit}` : ''}`,
     }),
   }),
 });
