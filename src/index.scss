@@ -4,22 +4,23 @@
   /* Global Roots */
 
 :root {
-  --main-color: rgb(255, 105, 0);
-  --second-color: #FFFAFA;
-  --max-width: 1280px;
-  --bg-color:  #f1f2f2;
-
-  --button-light-bg: rgb(255, 240, 230);
-  --button-grey-bg: rgb(226, 226, 233);
-  --button-light-color: rgb(209, 87, 0);
-  --button-grey-color: rgb(171, 173, 186);
-
   --transition: 0.3s ease-in;
 
   --box-shadow: 2px 2px 8px 0px rgba(34, 60, 80, 0.1);
 
-  --main-font-color: black;
-  --second-font-color: rgb(255, 255, 255);
+  --max-width: 1280px;
+
+  --orange: rgb(255, 105, 0);
+  --white: #FFFAFA;
+  --grayish-white: #f1f2f2;
+  --creamy: rgb(255, 240, 230);
+  --light-grey: rgb(226, 226, 233);
+  --light-orange: rgb(209, 87, 0);
+  --grey: rgb(171, 173, 186);
+  --black: black;
+
+  
+
 }
 
 
@@ -34,7 +35,7 @@ body {
 
   color: rgb(24,24,24);
 
-  background-color: var(--bg-color);
+  background-color: var(--grayish-white);
 }
 
 code {

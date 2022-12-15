@@ -11,7 +11,7 @@
 
 .filter {
   padding: 20px;
-  background-color: var(--button-grey-bg);
+  background-color: var(--light-grey);
   border-radius: 33px;
   border: none;
   text-align: center;
@@ -22,15 +22,15 @@
   transition: var(--transition);
 
   &:hover {
-    color: var(--second-font-color);
-    background-color: var(--main-color);
+    color: var(--white);
+    background-color: var(--orange);
   }
 }
 
 .sort {
-  color: var(--main-color);
+  color: var(--orange);
   font-weight: 700;
-  border: 1px solid var(--main-color);
+  border: 1px solid var(--orange);
   padding: 8px 16px;
   margin-left: 10px;
   cursor: pointer;
@@ -39,8 +39,8 @@
   transition: var(--transition);
 
   &:hover {
-    background-color: var(--main-color);
-    color: var(--second-font-color)
+    background-color: var(--orange);
+    color: var( --white)
   }
 }
 
@@ -51,22 +51,4 @@
 
 /*Popup*/
 
-.popup {
-  position: absolute;
-  background-color: black;
-  display: flex;
-  &_sort_list {
-
-  }
-  &_sort_item {
-
-  }
-
-  &_order_list {
-
-  }
-  &_order_item {
-
-  }
-}
 

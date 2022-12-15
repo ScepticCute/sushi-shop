@@ -5,16 +5,22 @@ import { useGetSushiQuery } from '../../redux/sushiApi';
 
 import { ISushi } from '../../models/ISushi';
 
+import { NotFoundBlock } from '../NotFoundBlock/NotFoundBlock';
+import { useAppSelector } from '../../hooks/redux';
+
 export const SushiSlider: React.FC = () => {
-  const { data = [], isLoading } = useGetSushiQuery(6);
+  const filter = useAppSelector((state) => state.filter);
+
+  const { data = [], isLoading, isError } = useGetSushiQuery(filter);
 
   if (isLoading) return <div>Loading...</div>;
+
+  if (isError) return <NotFoundBlock httpError={404} />;
 
   return (
     <div className={styles.wrapper}>
       {data.map((item: ISushi, index: number) => (
-        <div key={index}>
-          {item.title}
+        <div key={index} className={styles.slide}>
           <img src={item.imageUrl} alt="Sushi" />
         </div>
       ))}

@@ -1,41 +1,34 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-
-export interface IFilter {
-  limit?: number;
-  sort?: string;
-  order?: 'desc' | 'asc';
-  page?: number;
-  filters?: string[] | []; // подумать над логикой
-}
+import { IFilter, sortType } from '../../models/IFilter';
 
 const initialState: IFilter = {
-  limit: 12,
-  sort: 'rating',
-  order: 'desc',
-  page: 1,
-  filters: [],
+  sort: {
+    name: 'название',
+    sort: 'title',
+  },
 };
 
 export const filterSlice = createSlice({
   name: 'filter',
   initialState,
   reducers: {
-    setFilters(state, action: PayloadAction<IFilter>) {
-      state.limit = action.payload.limit;
-      state.filters = action.payload.filters;
+    setFilter(state, action: PayloadAction<string>) {
+      state.category = action.payload;
     },
-    setSort(state, action: PayloadAction<IFilter>) {
-      state.order = action.payload.order;
-      state.sort = action.payload.sort;
+    setSort(state, action: PayloadAction<sortType>) {
+      state.sort = action.payload;
     },
-    setPage(state, action: PayloadAction<IFilter>) {
-      state.page = action.payload.page;
+    setOrder(state, action: PayloadAction<'desc' | 'asc'>) {
+      state.order = action.payload;
+    },
+    setPage(state, action: PayloadAction<number>) {
+      state.page = action.payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { setFilters } = filterSlice.actions;
+export const { setFilter, setPage, setSort, setOrder } = filterSlice.actions;
 
 export default filterSlice.reducer;

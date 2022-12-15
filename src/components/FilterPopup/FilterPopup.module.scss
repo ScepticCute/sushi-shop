@@ -1,0 +1,27 @@
+.popup {
+  position: absolute;
+  background-color: var(--);
+  &_sort_list, &_order_list {
+    border-radius: 30px;
+    line-height: 50px;
+    background-color: var(--white);
+    width: 200px;
+    box-shadow: var(--box-shadow);
+    text-decoration: underline var(--orange);
+    list-style: none;
+    border: 1px solid var(--light-grey);
+  }
+  &_sort_item, &_order_item {
+    cursor: pointer;
+    color: var(--orange );
+    font-weight: 600;
+    &:hover {
+      color: var(--light-orange);
+      transition: var(--transition);
+    }
+  }
+}
+
+@media (max-width: 1460px) {
+  .popup {right: 0;}
+}

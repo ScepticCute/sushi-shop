@@ -2,10 +2,15 @@ import React from 'react';
 import styles from './Header.module.scss';
 import sushiLogo from '../../assets/img/header/sushi-logo.png';
 import { Link } from 'react-router-dom';
+import profileLogo from '../../assets/img/header/profile.svg';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux';
+import { openCloseCart } from '../../redux/slices/cartSlice';
 
 export const Header: React.FC = () => {
-  const [isLogged, setLogged] = React.useState(false);
+  const dispatch = useAppDispatch();
+  const sushiInCartCount: number = useAppSelector((state) => state.cart.sushi.length);
 
+  const [isLogged, setLogged] = React.useState(false);
   const onClickLogin: React.MouseEventHandler<HTMLButtonElement> = () => {
     setLogged(!isLogged);
   };
@@ -29,7 +34,9 @@ export const Header: React.FC = () => {
         </nav>
 
         {isLogged ? (
-          <div className={styles.profile}></div>
+          <div className={styles.profile}>
+            <img src={profileLogo} alt="profile logo" />
+          </div>
         ) : (
           <div className={styles.login}>
             <button onClick={(e) => onClickLogin(e)} className={styles.login_button}>
@@ -38,7 +45,9 @@ export const Header: React.FC = () => {
           </div>
         )}
 
-        <button className={styles.cart_button}>{0 ? 'Колво товаров' : 'Корзина'}</button>
+        <button className={styles.cart_button} onClick={() => dispatch(openCloseCart())}>
+          {sushiInCartCount ? `${sushiInCartCount}` : 'Корзина'}
+        </button>
       </header>
     </div>
   );

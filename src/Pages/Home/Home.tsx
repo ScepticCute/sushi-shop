@@ -1,17 +1,22 @@
-import { useState } from 'react';
-import { Filter } from '../../components/Filter/Filter';
+import { useEffect } from 'react';
+import styles from './Home.module.scss';
+
 import { Pagination } from '../../components/Pagination/Pagination';
 import { SushiBlock } from '../../components/SushiBlock/SushiBlock';
 import { SushiSlider } from '../../components/SushiSlider/SushiSlider';
+
 import { ISushi } from '../../models/ISushi';
-import { sushiApi, useGetSushiQuery } from '../../redux/sushiApi';
-import styles from './Home.module.scss';
+
+import { useAppSelector } from '../../hooks/redux';
+import { Filter } from '../../components/Filter/Filter';
+import { useGetSushiQuery } from '../../redux/sushiApi';
 
 export const Home = () => {
-  const { data = [], isLoading } = useGetSushiQuery({ limit: 12 });
+  const filter = useAppSelector((state) => state.filter);
+
+  const { data = [], isLoading } = useGetSushiQuery({ ...filter });
 
   if (isLoading) return <h1> Loading... </h1>;
-
   return (
     <div className={styles.wrapper}>
       <SushiSlider />
