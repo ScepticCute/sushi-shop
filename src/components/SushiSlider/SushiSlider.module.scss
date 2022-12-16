@@ -2,14 +2,17 @@
   height: 240px;
   background-color: grey;
   display: flex;
+  margin: 0;
+  padding: 0;
 
   .slide {
     width: 200px;
     height: 240px;
     overflow: hidden;
-
+  
     img {
       width: 100%;
     }
   }
+  
 }

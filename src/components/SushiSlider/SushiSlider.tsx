@@ -9,11 +9,14 @@ import { NotFoundBlock } from '../NotFoundBlock/NotFoundBlock';
 import { useAppSelector } from '../../hooks/redux';
 
 export const SushiSlider: React.FC = () => {
-  const filter = useAppSelector((state) => state.filter);
+  const { data = [], isLoading, isError } = useGetSushiQuery({});
 
-  const { data = [], isLoading, isError } = useGetSushiQuery(filter);
-
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading)
+    return (
+      <div>
+        <div>is Loading...</div>
+      </div>
+    );
 
   if (isError) return <NotFoundBlock httpError={404} />;
 
@@ -21,7 +24,7 @@ export const SushiSlider: React.FC = () => {
     <div className={styles.wrapper}>
       {data.map((item: ISushi, index: number) => (
         <div key={index} className={styles.slide}>
-          <img src={item.imageUrl} alt="Sushi" />
+          <img src={item.imageUrl} alt="best sushi" />
         </div>
       ))}
     </div>

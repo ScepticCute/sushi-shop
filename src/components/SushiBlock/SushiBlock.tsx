@@ -1,8 +1,11 @@
 import React from 'react';
-import { useAppDispatch } from '../../hooks/redux';
-import { ISushi } from '../../models/ISushi';
-import { addToCart } from '../../redux/slices/cartSlice';
 import styles from './SushiBlock.module.scss';
+
+import { ISushi } from '../../models/ISushi';
+
+import { useAppDispatch } from '../../hooks/redux';
+import { addToCart } from '../../redux/slices/cartSlice';
+import { PopupSushiBlock } from '../PopupSushiBlock/PopupSushiBlock';
 
 export const SushiBlock: React.FC<ISushi> = (props) => {
   const dispatch = useAppDispatch();
@@ -11,10 +14,19 @@ export const SushiBlock: React.FC<ISushi> = (props) => {
     dispatch(addToCart(item));
   };
 
+  const onClickOpenPopupBlock = () => {
+    return <PopupSushiBlock />;
+  };
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.sushi_img_wrapper}>
-        <img className={styles.sushi_img} src={props.imageUrl} alt="sushi" />
+        <img
+          className={styles.sushi_img}
+          src={props.imageUrl}
+          alt="sushi"
+          onClick={onClickOpenPopupBlock}
+        />
       </div>
       <div className={styles.title}> {props.title} </div>
       <div className={styles.description}>

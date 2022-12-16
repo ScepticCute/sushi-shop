@@ -23,14 +23,23 @@ export const cartSlice = createSlice({
       state.sum += Number(action.payload.price);
     },
     removeFromCartOne(state, action: PayloadAction<ISushi>) {
-      state.sushi.forEach((item, i, arr) =>
-        item.id === action.payload.id ? arr.splice(i, 1) : '',
-      );
+      state.sum -= action.payload.price;
 
-      for (let i = 0; i < state.sushi.length; i++) {}
+      for (let i = 0; i < state.sushi.length; i++) {
+        if (state.sushi[i].id === action.payload.id) {
+          state.sushi.splice(i, 1);
+          break;
+        }
+      }
     },
     removeFromCartAll(state, action: PayloadAction<ISushi>) {
+      state.sushi.forEach((item) => {
+        if (item.id === action.payload.id) {
+          state.sum -= item.price;
+        }
+      });
       state.sushi = state.sushi.filter((item) => item.id !== action.payload.id);
+
     },
     openCloseCart(state) {
       state.isOpen = !state.isOpen;

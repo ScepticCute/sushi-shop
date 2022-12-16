@@ -2,53 +2,90 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
+  max-height: 100px;
+  position: relative;
 
-.filters {
-  display: flex;
-  margin: 20px 0;
-}
+  .title {
+    font-size: 20px;
+    font-weight: 500;
+  }
 
-.filter {
-  padding: 20px;
-  background-color: var(--light-grey);
-  border-radius: 33px;
-  border: none;
-  text-align: center;
-  font-weight: 500;
-  margin: 0 10px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: var(--transition);
+  .filters {
+    display: flex;
+    margin: 20px 0;
+  }
 
-  &:hover {
-    color: var(--white);
-    background-color: var(--orange);
+  .filter {
+    padding: 20px;
+    background-color: var(--light-grey);
+    border-radius: 33px;
+    border: none;
+    text-align: center;
+    font-weight: 500;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+
+    &:hover {
+      color: var(--white);
+      background-color: var(--orange);
+    }
+
+    &_active {
+      padding: 20px;
+      background-color: var(--orange);
+      border-radius: 33px;
+      border: none;
+      text-align: center;
+      font-weight: 500;
+      margin: 0 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: var(--transition);
+      color: var(--white);
+
+      &:hover {
+        background: var(--darky-orange);
+      }
+    }
+  }
+
+  .sort {
+    color: var(--orange);
+    font-weight: 700;
+    font-size: 16px;
+    height: 30px;
+    border: 1px solid var(--orange);
+    padding: 8px 16px;
+    margin-left: 10px;
+    cursor: pointer;
+
+    border-radius: 30px;
+    transition: var(--transition);
+
+    &:hover {
+      background-color: var(--orange);
+      color: var(--white);
+    }
+  }
+
+  .sort_wrapper {
+    font-weight: 900;
+    letter-spacing: 0.5px;
   }
 }
 
-.sort {
-  color: var(--orange);
-  font-weight: 700;
-  border: 1px solid var(--orange);
-  padding: 8px 16px;
-  margin-left: 10px;
-  cursor: pointer;
-
-  border-radius: 30px;
-  transition: var(--transition);
-
-  &:hover {
-    background-color: var(--orange);
-    color: var( --white)
+@media (max-width: 1030px) {
+  
+  .title {
+    display: none;
   }
 }
 
-.sort_wrapper {
-  font-weight: 900;
-  letter-spacing: 0.5px;
+@media (max-width: 890px) {
+
+  .filters {
+    overflow-y: scroll;
+  }
 }
-
-/*Popup*/
-
-

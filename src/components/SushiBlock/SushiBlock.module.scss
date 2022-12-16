@@ -7,6 +7,7 @@
   padding: 15px;
   line-height: 1.6;
   transition: var(--transition);
+  cursor: grab;
   &:hover {
     box-shadow: 4px 0px 28px 0px rgba(34, 60, 80, 0.2);
   }
@@ -21,6 +22,7 @@
   }
   .sushi_img {
     width: 100%;
+    cursor: pointer;
   }
   
   .title {
@@ -39,11 +41,7 @@
     overflow: hidden;
     padding-left: 12px;
     line-height: 25px;
-    font-weight: 300;
-
-
-
-    
+    font-weight: 300; 
   }
 
   

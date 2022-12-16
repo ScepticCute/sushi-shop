@@ -4,19 +4,20 @@ import styles from './Filter.module.scss';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { FilterPopup } from '../FilterPopup/FilterPopup';
 import { sortType } from '../../models/IFilter';
+import { setCategory, setFilter } from '../../redux/slices/filterSlice';
 
 const sortArray: sortType[] = [
   { name: 'название', sort: 'title' },
   { name: 'цена', sort: 'price' },
   { name: 'популярность', sort: 'rating' },
 ];
-const filterArray = ['все', 'классические', 'запечённые', 'острые'];
+const filterArray = ['острое', 'рыба', 'курица', 'морепродукты', 'креветка', 'свинина'];
 const orderArray = ['по убыванию', 'во возрастанию'];
 
 export const Filter: React.FC = () => {
   const dispatch = useAppDispatch();
-  const filters = useAppSelector((state) => state.filter.category);
   const currentSort = useAppSelector((state) => state.filter.sort);
+  const currentCategory = useAppSelector((state) => state.filter.category);
 
   const [isOpen, setOpen] = React.useState(false);
 
@@ -24,12 +25,20 @@ export const Filter: React.FC = () => {
     setOpen(!isOpen);
   };
 
+  const onClickCategory = (category: string) => {
+    dispatch(setCategory(category));
+    window.scroll(0, 0);
+  };
+
   return (
     <div className={styles.filter_wrapper}>
-      <h2> Все суши: </h2>
+      <span className={styles.title}> Все категории: </span>
       <div className={styles.filters}>
         {filterArray.map((title, i) => (
-          <div key={i} className={styles.filter}>
+          <div
+            key={i}
+            onClick={() => onClickCategory(title)}
+            className={currentCategory === title ? styles.filter_active : styles.filter}>
             {title}
           </div>
         ))}
