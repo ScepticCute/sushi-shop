@@ -7,25 +7,46 @@ import { SushiSlider } from '../../components/SushiSlider/SushiSlider';
 
 import { ISushi } from '../../models/ISushi';
 
+import Skeleton from './Skeleton';
+
 import { useAppSelector } from '../../hooks/redux';
 import { Filter } from '../../components/Filter/Filter';
 import { useGetSushiQuery } from '../../redux/sushiApi';
+import { NotFoundBlock } from '../../components/NotFoundBlock/NotFoundBlock';
 
 export const Home = () => {
   const filter = useAppSelector((state) => state.filter);
 
-  const { data = [], isLoading } = useGetSushiQuery({ ...filter });
+  const { data = [], isFetching } = useGetSushiQuery({ ...filter });
 
-  if (isLoading) return <h1> Loading... </h1>;
+  if (isFetching) {
+    return (
+        <div className={styles.wrapper}>
+          <SushiSlider />
+          <div className={styles.content}>
+            <Filter />
+            <div className={styles.sushi}>
+              {[...new Array(8)].map((_, i: number) => (
+                <Skeleton key={i} />
+              ))}
+            </div>
+            <Pagination />
+          </div>
+        </div>
+    );
+  }
+
   return (
     <div className={styles.wrapper}>
       <SushiSlider />
       <div className={styles.content}>
         <Filter />
         <div className={styles.sushi}>
-          {data.map((sushi: ISushi, i: number) => (
-            <SushiBlock {...sushi} key={i} />
-          ))}
+          {data.length ? (
+            data.map((sushi: ISushi, i: number) => <SushiBlock {...sushi} key={i} />)
+          ) : (
+            <NotFoundBlock text="Суши кончились... Вернитесь на прошлую страницу!" />
+          )}
         </div>
         <Pagination />
       </div>

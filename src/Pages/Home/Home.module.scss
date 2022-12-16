@@ -1,7 +1,7 @@
 .wrapper {
   .content {
     max-width: var(--max-width);
-    margin: 0 auto;
+    margin: 15px auto;
     .sushi {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
