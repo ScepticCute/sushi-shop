@@ -4,6 +4,7 @@ export type sortType = {
 };
 
 export interface IFilter {
+  limit?: number;
   sort?: sortType;
   order?: 'desc' | 'asc';
   page?: number;

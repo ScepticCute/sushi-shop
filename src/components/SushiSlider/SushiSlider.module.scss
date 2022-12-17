@@ -1,18 +1,80 @@
 .wrapper {
+  margin: 15px 0;
   height: 240px;
-  background-color: grey;
-  display: flex;
-  margin: 0;
-  padding: 0;
-
+  margin: flex;
+  background-color: var(--grayish-white);
   .slide {
-    width: 200px;
+    width: 200px !important;
     height: 240px;
     overflow: hidden;
-  
-    img {
+    cursor: grab;
+    border-radius: 23px;
+    padding: 10px;
+    transition: var(--transition);
+
+    &:hover {
+      box-shadow: var(--box-shadow);
+
+    }
+
+    .slide_img {
       width: 100%;
+      border-radius: 30px;
+    }
+
+    .title {
+      position: relative;
+      top: 7px;
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 8px;
+      padding-left: 12px;
+      text-transform: capitalize;
+    }
+
+    .category {
+      display: block;
+      padding: 3px 0 3px 12px;
+      color: grey;
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: capitalize;
+    }
+
+    .footer_wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .price {
+      font-weight: 700;
+      padding-left: 12px;
+      font-size: 21px;
+    }
+
+    .buy_button {
+      position: relative;
+      top: 56px;
+      right: 4px;
+
+      background-color: var(--creamy);
+      transition: var(--transition);
+      border-radius: 33px;
+      border: none;
+      width: 100px;
+      height: 40px;
+      margin-left: 2px;
+      text-align: center;
+      font-weight: 400;
+      font-size: 16px;
+      cursor: pointer;
+
+      box-shadow: var(--box-shadow);
+
+      &:hover {
+        background-color: var(--orange);
+        color: var(--white);
+      }
     }
   }
-  
 }

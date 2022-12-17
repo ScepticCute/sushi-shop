@@ -7,8 +7,8 @@ export const sushiApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://6396d95486d04c76338279f7.mockapi.io/' }),
   endpoints: (build) => ({
     getSushi: build.query<ISushi[], IFilter>({
-      query: ({ sort = { sort: 'rating' }, order = 'desc', page = 1, category = '' }) =>
-        `sushi?limit=8&sortBy=${sort.sort}&order=${order}&page=${page}${
+      query: ({ limit = 8, sort = { sort: 'rating' }, order = 'desc', page = 1, category = '' }) =>
+        `sushi?limit=${limit}&sortBy=${sort.sort}&order=${order}&page=${page}${
           category ? `&category=${category}` : ''
         }`,
     }),

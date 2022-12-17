@@ -4,7 +4,7 @@ import styles from './Filter.module.scss';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { FilterPopup } from '../FilterPopup/FilterPopup';
 import { sortType } from '../../models/IFilter';
-import { setCategory, setFilter } from '../../redux/slices/filterSlice';
+import { setCategory, setFilter, setPage } from '../../redux/slices/filterSlice';
 
 const sortArray: sortType[] = [
   { name: 'название', sort: 'title' },
@@ -27,6 +27,7 @@ export const Filter: React.FC = () => {
 
   const onClickCategory = (category: string) => {
     dispatch(setCategory(category));
+    dispatch(setPage(1));
     window.scroll(0, 0);
   };
 

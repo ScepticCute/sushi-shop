@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './FilterPopup.module.scss';
 
 import { useAppDispatch } from '../../hooks/redux';
-import { setOrder, setSort } from '../../redux/slices/filterSlice';
+import { setOrder, setPage, setSort } from '../../redux/slices/filterSlice';
 import { sortType } from '../../models/IFilter';
 
 type IFilterPopupProps = {
@@ -21,15 +21,18 @@ export const FilterPopup: React.FC<IFilterPopupProps> = ({
   const onClickSort = (sort: sortType): void => {
     dispatch(setSort(sort));
     setOpenPopup(false);
+    dispatch(setPage(1));
   };
 
   const onClickOrder = (order: string): void => {
     if (order.includes('по убыванию')) {
       dispatch(setOrder('desc'));
       setOpenPopup(false);
+      dispatch(setPage(1));
     } else {
       dispatch(setOrder('asc'));
       setOpenPopup(false);
+      dispatch(setPage(1));
     }
   };
 
