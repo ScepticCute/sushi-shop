@@ -1,8 +1,6 @@
 import React from 'react';
 
 import styles from './SushiSlider.module.scss';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 
 import { useGetSushiQuery } from '../../redux/sushiApi';
 
@@ -12,6 +10,8 @@ import { NotFoundBlock } from '../NotFoundBlock/NotFoundBlock';
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 
 import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import { settings } from './sliderConfig';
 
 import Skeleton from './Skeleton';

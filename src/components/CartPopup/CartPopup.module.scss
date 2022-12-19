@@ -7,37 +7,121 @@
   right: 0;
   top: 0;
   bottom: 0;
-  min-width: 400px;
+  width: 320px;
   z-index: 10;
+  overflow-y: scroll;
 
   .header_wrapper {
     display: flex;
     justify-content: space-between;
-  }
+    height: 60px;
+    background-color: var(--creamy);
+    box-shadow: var(--box-shadow);
+    border-radius: 20px;
 
-  .sushi {
-    width: 350px;
-    height: 150px;
-    background: white;
-    list-style: none;
-    margin: 10px;
-    &_img {
-      width: 100px;
-      height: 100px;
-      overflow: hidden;
+    .sushi_count {
+      display: inline-block;
+      font-size: 16px;
+      padding-top: 20px;
+      padding-left: 20px;
+      text-align: center;
+      color: var(--orange);
+      font-weight: 600;
+      letter-spacing: 1.4px;
+
+      &::after {
+        content: '/ед';
+        position: relative;
+        font-size: 9px;
+        top: 3px;
+        left: -2px;
+        color: var(--darky-orange);
+      }
+    }
+
+    .sushi_sum {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--darky-orange);
+    }
+
+    .close_button {
+      margin: 15px;
+      display: block;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      color: var(--darky-orange);
+      font-weight: 300;
+      border: 1px solid var(--orange);
+      background-color: var(--bg-grey-button);
+      border-radius: 100%;
+      cursor: pointer;
     }
   }
 
+  .sushi {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+    height: 200;
+    background-color: var(--creamy);
+    border-radius: 30px;
+    box-shadow: var(--box-shadow);
+    list-style: none;
+    margin: 10px;
+    padding: 15px;
+    &_title_and_price {
+      font-size: 24px;
+      font-weight: 500;
+      text-transform: capitalize;
+      color: var(--darky-orange);
+    }
+    &_img {
+      margin: 0 auto;
+      border-radius: 20px;
+      display: block;
+      width: 200px;
+      overflow: hidden;
+    }
+    &_category {
+      height: 18px;
+      padding: 10px 0;
+      color: grey;
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: capitalize;
+    }
 
-  .close_button {
-    width: 30px;
-    height: 30px;
-    text-align: center;
-    color: red;
-    font-weight: 300;
-    border: 1px solid grey;
-    background-color: var(--bg-grey-button);
-    border-radius: 100%;
-    cursor: pointer;
+    .buttons_wrapper {
+      display: flex;
+      justify-content: space-between;
+      button {
+        transition: var(--transition);
+        margin: 15px 10px 10px;
+        border-radius: 20px;
+        border: none;
+        width: 100px;
+        height: 70px;
+        text-align: center;
+        font-weight: 400;
+        font-size: 16px;
+        opacity: 0.93;
+
+        cursor: pointer;
+        &:hover {
+          box-shadow: 3px 0px 27px -5px rgb(34 60 80 / 36%);
+          opacity: 1;
+        }
+      }
+      .button_remove_one_sushi {
+        color: var(--orange)
+      }
+      .button_remove_all_sushi {
+        background-color:#D22B2B;
+        color: var(--grayish-white);
+      }
+    }
+    
   }
 }

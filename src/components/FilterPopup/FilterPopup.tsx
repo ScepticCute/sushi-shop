@@ -27,12 +27,12 @@ export const FilterPopup: React.FC<IFilterPopupProps> = ({
   const onClickOrder = (order: string): void => {
     if (order.includes('по убыванию')) {
       dispatch(setOrder('desc'));
-      setOpenPopup(false);
       dispatch(setPage(1));
+      setOpenPopup(false);
     } else {
       dispatch(setOrder('asc'));
-      setOpenPopup(false);
       dispatch(setPage(1));
+      setOpenPopup(false);
     }
   };
 

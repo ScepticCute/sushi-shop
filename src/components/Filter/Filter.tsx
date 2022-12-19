@@ -3,8 +3,9 @@ import styles from './Filter.module.scss';
 
 import { useAppDispatch, useAppSelector } from '../../hooks/redux';
 import { FilterPopup } from '../FilterPopup/FilterPopup';
+import { setCategory, setPage } from '../../redux/slices/filterSlice';
+
 import { sortType } from '../../models/IFilter';
-import { setCategory, setFilter, setPage } from '../../redux/slices/filterSlice';
 
 const sortArray: sortType[] = [
   { name: 'название', sort: 'title' },

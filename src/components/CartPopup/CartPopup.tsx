@@ -25,10 +25,11 @@ export const CartPopup: React.FC<ICartPopup> = () => {
     <div className={styles.wrapper}>
       <div className={styles.header_wrapper}>
         <div>
-          Корзина:
           <span className={styles.sushi_count}>
-            {sushi.length} : {sum} Р.
+            Корзина:
+            {sushi.length}
           </span>
+          <span className={styles.sushi_sum}>: {sum} Р.</span>
         </div>
         <button className={styles.close_button} onClick={() => dispatch(openCloseCart())}>
           X
@@ -37,12 +38,24 @@ export const CartPopup: React.FC<ICartPopup> = () => {
       <ul>
         {sushi.map((item, i) => (
           <li key={i} className={styles.sushi}>
-            {item.title}
-            {item.price}
+            <span className={styles.sushi_title_and_price}>
+              {item.title}: {item.price}
+            </span>
+            <span className={styles.sushi_category}>{item.category}</span>
+
             <img className={styles.sushi_img} src={item.imageUrl} alt="sushi" />
-            {item.category}
-            <button onClick={() => onClickRemoveFromCartAll(item)}> Убрать все роллы </button>
-            <button onClick={() => onClickRemoveFromCartOne(item)}> Убрать один ролл </button>
+            <div className={styles.buttons_wrapper}>
+              <button
+                className={styles.button_remove_one_sushi}
+                onClick={() => onClickRemoveFromCartAll(item)}>
+                Убрать все роллы
+              </button>
+              <button
+                className={styles.button_remove_all_sushi}
+                onClick={() => onClickRemoveFromCartOne(item)}>
+                Убрать один ролл
+              </button>
+            </div>
           </li>
         ))}
       </ul>

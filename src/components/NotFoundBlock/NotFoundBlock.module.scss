@@ -1,0 +1,45 @@
+.wrapper {
+  background-color: var(--creamy);
+  border-radius: 50px;
+  padding: 40px;
+  text-align: center;
+  margin: auto;
+  width: 60%;
+  min-width: 500px;
+  height: 440px;
+  font-size: 22px;
+  .emoji {
+    display: inline-block;
+    font-size: 90px;
+    padding: 20px;
+  }
+  button {
+    background-color: rgb(54, 146, 89);
+    opacity: 0.5;
+
+    transition: var(--transition);
+
+    border-radius: 33px;
+    border: none;
+    width: 200px;
+    height: 80px;
+    margin-left: 2px;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--grayish-white);
+
+    box-shadow: var(--box-shadow);
+
+    &:hover {
+      opacity: 0.9;
+
+      background-color: rgb(31, 163, 82);
+      color: var(--white);
+    }
+    &:active {
+      opacity: 1;
+    }
+  }
+}

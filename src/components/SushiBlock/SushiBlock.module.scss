@@ -7,31 +7,28 @@
   padding: 15px;
   line-height: 1.6;
   transition: var(--transition);
-  cursor: grab;
+  cursor: pointer;
+
+
   &:hover {
     box-shadow: 4px 0px 28px 0px rgba(34, 60, 80, 0.2);
   }
 
-  
   .sushi_img_wrapper {
-    
     border-radius: 30px;
     height: 200px;
     overflow: hidden;
-    
   }
   .sushi_img {
     width: 100%;
-    cursor: pointer;
   }
-  
+
   .title {
     font-size: 18px;
     font-weight: 700;
     margin-top: 8px;
     padding-left: 12px;
     text-transform: capitalize;
-
   }
 
   .description {
@@ -41,10 +38,9 @@
     overflow: hidden;
     padding-left: 12px;
     line-height: 25px;
-    font-weight: 300; 
+    font-weight: 300;
   }
 
-  
   .category {
     height: 18px;
     padding: 10px 0 10px 12px;
@@ -53,41 +49,39 @@
     font-size: 12px;
     text-transform: capitalize;
   }
-    .footer_wrapper {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px;
+  .footer_wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 
-      .price {
-        font-weight: 700;
-        font-size: 24px;
+    .price {
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    .buy_button {
+      background-color: var(--creamy);
+
+      transition: var(--transition);
+
+      border-radius: 33px;
+      border: none;
+      width: 100px;
+      height: 40px;
+      margin-left: 2px;
+      text-align: center;
+      font-weight: 400;
+      font-size: 16px;
+      cursor: pointer;
+
+      box-shadow: var(--box-shadow);
+
+      &:hover {
+        background-color: var(--orange);
+        color: var(--white);
       }
-    
-    
-      .buy_button {
-        background-color: var(--creamy);
-    
-        transition: var(--transition);
-    
-        border-radius: 33px;
-        border: none;
-        width: 100px;
-        height: 40px;
-        margin-left: 2px;
-        text-align: center;
-        font-weight: 400;
-        font-size: 16px;
-        cursor: pointer;
-    
-        box-shadow: var(--box-shadow);
-    
-        &:hover {
-          background-color: var(--orange);
-          color: var( --white)
-        }
-      }
+    }
   }
 
-  
 }

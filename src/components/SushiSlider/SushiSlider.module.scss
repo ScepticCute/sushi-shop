@@ -1,8 +1,10 @@
 .wrapper {
   margin: 15px 0;
-  height: 240px;
+  height: 280px;
   margin: flex;
   background-color: var(--grayish-white);
+  background-color: var(--creamy);
+  box-shadow: 3px 0px 27px -5px rgba(34, 60, 80, 0.36);
   .slide {
     width: 200px !important;
     height: 240px;

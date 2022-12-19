@@ -1,11 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
+
+import { useAppSelector } from './hooks/redux';
+
 import { CartPopup } from './components/CartPopup/CartPopup';
 import { Header } from './components/Header/Header';
-import { useAppSelector } from './hooks/redux';
-import { Cart } from './Pages/Cart/Cart';
-import { Contact } from './Pages/Contact/Contact';
 import { Home } from './Pages/Home/Home';
-import { NotFound } from './Pages/NotFound/NotFound';
+import { NotFoundBlock } from './components/NotFoundBlock/NotFoundBlock';
 
 function App() {
   const cartPopupIsOpen = useAppSelector((state) => state.cart.isOpen);
@@ -17,9 +17,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<NotFoundBlock httpError={404} />} />
       </Routes>
     </div>
   );

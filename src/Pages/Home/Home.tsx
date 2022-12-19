@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import styles from './Home.module.scss';
 
 import { Pagination } from '../../components/Pagination/Pagination';
@@ -21,18 +20,18 @@ export const Home = () => {
 
   if (isFetching) {
     return (
-        <div className={styles.wrapper}>
-          <SushiSlider />
-          <div className={styles.content}>
-            <Filter />
-            <div className={styles.sushi}>
-              {[...new Array(8)].map((_, i: number) => (
-                <Skeleton key={i} />
-              ))}
-            </div>
-            <Pagination />
+      <div className={styles.wrapper}>
+        <SushiSlider />
+        <div className={styles.content}>
+          <Filter />
+          <div className={styles.sushi}>
+            {[...new Array(8)].map((_, i: number) => (
+              <Skeleton key={i} />
+            ))}
           </div>
+          <Pagination />
         </div>
+      </div>
     );
   }
 
