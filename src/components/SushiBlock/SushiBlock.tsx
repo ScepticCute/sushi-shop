@@ -5,7 +5,6 @@ import { ISushi } from '../../models/ISushi';
 
 import { useAppDispatch } from '../../hooks/redux';
 import { addToCart } from '../../redux/slices/cartSlice';
-import { PopupSushiBlock } from '../PopupSushiBlock/PopupSushiBlock';
 
 export const SushiBlock: React.FC<ISushi> = (props) => {
   const dispatch = useAppDispatch();
@@ -14,18 +13,16 @@ export const SushiBlock: React.FC<ISushi> = (props) => {
     dispatch(addToCart(item));
   };
 
-  const onClickOpenPopupBlock = () => {
-    return <PopupSushiBlock />;
-  };
+  const [active, setActive] = React.useState(false);
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.sushi_img_wrapper}>
         <img
           className={styles.sushi_img}
+          onClick={() => (active ? setActive(false) : setActive(true))}
           src={props.imageUrl}
           alt="sushi"
-          onClick={onClickOpenPopupBlock}
         />
       </div>
       <div className={styles.title}> {props.title} </div>

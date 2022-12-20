@@ -11,9 +11,6 @@ export const Header: React.FC = () => {
   const sushiInCartCount: number = useAppSelector((state) => state.cart.sushi.length);
 
   const [isLogged, setLogged] = React.useState(false);
-  const onClickLogin: React.MouseEventHandler<HTMLButtonElement> = () => {
-    setLogged(!isLogged);
-  };
 
   return (
     <div className={styles.wrapper}>
@@ -25,10 +22,10 @@ export const Header: React.FC = () => {
         <nav className={styles.nav}>
           <ul className={styles.nav_list}>
             <Link to="/">
-              <li className={styles.nav_list_item}>Home</li>
+              <li className={styles.nav_list_item}>Магазин</li>
             </Link>
-            <Link to="/contact">
-              <li className={styles.nav_list_item}>Contact</li>
+            <Link to="/about">
+              <li className={styles.nav_list_item}>Где мы?</li>
             </Link>
           </ul>
         </nav>
@@ -38,15 +35,11 @@ export const Header: React.FC = () => {
             <img src={profileLogo} alt="profile logo" />
           </div>
         ) : (
-          <div className={styles.login}>
-            <button onClick={(e) => onClickLogin(e)} className={styles.login_button}>
-              Войти
-            </button>
-          </div>
+          <div className={styles.login}></div>
         )}
 
         <button className={styles.cart_button} onClick={() => dispatch(openCloseCart())}>
-          {sushiInCartCount ? `${sushiInCartCount}` : 'Корзина'}
+          {sushiInCartCount ? `Корзина: ${sushiInCartCount}` : 'Корзина'}
         </button>
       </header>
     </div>
