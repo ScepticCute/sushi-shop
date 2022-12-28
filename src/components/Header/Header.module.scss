@@ -162,12 +162,8 @@
   }
 
   .open_burger_menu {
-    animation-name: open-burger-menu-move;
-    animation-duration: 0.4s;
-    animation-timing-function: ease-out;
-
     display: block;
-
+    opacity: 0;
     top: 0;
     right: 0;
     left: 0;
@@ -207,11 +203,20 @@
   }
 }
 
-@keyframes open-burger-menu-move {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+// Animation
+
+.open_burger_menu_enter_active {
+  opacity: 0;
+  transform: scale(0.9);
+}
+.open_burger_menu_enter_done {
+  transform: scale(1);
+
+  opacity: 1;
+}
+.open_burger_menu_exit_active {
+
+}
+.open_burger_menu_exit {
+  
 }

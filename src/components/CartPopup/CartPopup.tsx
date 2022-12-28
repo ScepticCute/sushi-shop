@@ -37,7 +37,7 @@ export const CartPopup: React.FC<ICartPopup> = () => {
             Корзина:
             {cartLength}
           </span>
-          <span className={styles.sushi_sum}>: {sum} Р.</span>
+          <span className={styles.sushi_sum}>: {sum} ₽.</span>
         </div>
         <button className={styles.close_button} onClick={() => dispatch(openCloseCart())}>
           X
@@ -47,7 +47,7 @@ export const CartPopup: React.FC<ICartPopup> = () => {
         {sushi.map((item, i) => (
           <li key={i} className={styles.sushi}>
             <span className={styles.sushi_title_and_price}>
-              {item.title}: {item.price}
+              {item.title}: {item.price} ₽
             </span>
             <div className={styles.sushi_category_and_count_wrapper}>
               <span className={styles.sushi_category}>{item.category}</span>

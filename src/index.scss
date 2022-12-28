@@ -18,12 +18,7 @@
   --darky-orange: rgb(209, 87, 0);
   --grey: rgb(171, 173, 186);
   --black: black;
-
-  
-
 }
-
-
 body {
   overflow-x: hidden; // Фикс бесконечного слайдера.
   margin: 0;
@@ -38,7 +33,6 @@ body {
 
   background-color: var(--grayish-white);
 }
-
 code {
   font-family: 'Roboto', sans-serif, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
