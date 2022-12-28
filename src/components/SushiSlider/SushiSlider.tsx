@@ -44,7 +44,8 @@ export const SushiSlider: React.FC = () => {
                   <div>
                     <h2 className={styles.title}> {item.title} </h2>
                     <span className={styles.category}>{item.category}</span>
-                    <span className={styles.price}>{item.price} ₽</span>
+                    <span className={styles.price}>{Math.floor(item.price)} ₽</span>
+                    {/* Код выше убирает ошибку mockapi, который добавляет ".00" после целых чисел. */}
                   </div>
                   <button className={styles.buy_button} onClick={() => onClickBuyButton(item)}>
                     Купить

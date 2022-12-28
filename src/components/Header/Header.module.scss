@@ -1,5 +1,7 @@
 .wrapper {
   background-color: var(--white);
+  position: relative;
+  top: 0;
 }
 
 .header {
@@ -58,6 +60,12 @@
         background-color: var(--orange);
         color: var(--white);
       }
+      &:active {
+        background-color: var(--darky-orange);
+        color: white;
+        transition: .1s ease;
+        transform: scale(.98);
+      }
     }
   }
 }
@@ -85,6 +93,10 @@
 /* Cart */
 
 .cart_button {
+  position: fixed;
+  top: 15px;
+  right: 320px;
+  z-index: 8;
   background-color: var(--orange);
   color: var(--white);
   border-radius: 33px;
@@ -101,5 +113,105 @@
   &:active {
     color: rgb(255, 231, 187);
   }
+}
 
+/* Burger */
+
+.burger {
+  display: none;
+}
+
+.open_burger_menu {
+  transition: var(--transition);
+  display: none;
+}
+
+@media (max-width: 1600px) {
+  .cart_button {
+    right: 200px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .cart_button {
+    right: 100px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .cart_button {
+    right: 50px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .burger {
+    display: block;
+    font-size: 40px;
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 11;
+    width: 40px;
+    height: 40px;
+  }
+  header {
+    display: none !important;
+  }
+
+  .open_burger_menu {
+    animation-name: open-burger-menu-move;
+    animation-duration: 0.4s;
+    animation-timing-function: ease-out;
+
+    display: block;
+
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: var(--creamy);
+    z-index: 10;
+
+    .nav_list {
+      display: flex;
+      flex-direction: column;
+      justify-content: baseline;
+      padding: 60px;
+
+      &_item {
+        font-weight: 300;
+        margin: 10px;
+        font-size: 4vh;
+        width: 100%;
+        height: 50px;
+
+        color: var(--white);
+        background-color: var(--orange);
+      }
+      &:first-child {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .cart_button {
+    top: 105px;
+    right: 20px;
+    .cart_text {
+      display: none;
+    }
+  }
+}
+
+@keyframes open-burger-menu-move {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -1,14 +1,18 @@
 .wrapper {
+
+  animation-name: cart-popup-move;
+  animation-duration: .4s;
+  animation-timing-function: ease;
+
   position: fixed;
   background: var(--grayish-white);
-  border-left: black 2px solid;
-  box-shadow: var(--box-shadow);
+  box-shadow: -7px 0px 8px 6px rgba(34, 60, 80, 0.05);
   padding: 20px;
   right: 0;
   top: 0;
   bottom: 0;
-  width: 320px;
-  z-index: 10;
+  max-width: 320px;
+  z-index: 12;
   overflow-y: scroll;
 
   .header_wrapper {
@@ -84,6 +88,10 @@
       width: 200px;
       overflow: hidden;
     }
+    &_category_and_count_wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
     &_category {
       height: 18px;
       padding: 10px 0;
@@ -91,6 +99,14 @@
       font-weight: 700;
       font-size: 12px;
       text-transform: capitalize;
+    }
+    .one_sushi_count {
+      position: relative;
+      top: 9px;
+      font-size: 12px;
+      color: var(--orange);
+      font-weight: 700;
+      margin-left: 10px;
     }
 
     .buttons_wrapper {
@@ -121,7 +137,61 @@
         background-color:#D22B2B;
         color: var(--grayish-white);
       }
+      
     }
     
+  }
+
+  .buy_button {
+    width: 100%;
+    padding: 20px;
+    background-color: var(--light-grey);
+    border-radius: 4px;
+    border: none;
+    text-align: center;
+    font-weight: 500;
+    margin: 0 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+
+    &:hover {
+      background-color: var(--orange);
+      color: var(--grayish-white);
+    }
+    &:active {
+      background-color: var(--darky-orange);
+      color: white;
+      transition: .1s ease;
+      transform: scale(.98);
+    }
+    
+  }
+}
+
+@media (max-width: 1000px) {
+  .wrapper {
+    max-width: 50%;
+    .sushi {
+      flex-direction: column;
+      max-width: 100%;
+      &_img {
+        width: 100%;
+      }
+      .buttons_wrapper {
+        justify-content: space-around;
+      }
+      
+    }  
+  }
+}
+
+
+@keyframes cart-popup-move {
+  0% {
+    right: -320px;
+  }
+  100% {
+    right: 0
   }
 }

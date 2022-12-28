@@ -31,7 +31,8 @@ export const SushiBlock: React.FC<ISushi> = (props) => {
       </div>
       <div className={styles.category}>{props.category}</div>
       <div className={styles.footer_wrapper}>
-        <div className={styles.price}> {props.price} ₽</div>
+        <div className={styles.price}> {Math.round(props.price)} ₽</div>
+        {/* Код выше убирает ошибку mockapi, который добавляет ".00" после целых чисел. */}
 
         <button
           onClick={() => {

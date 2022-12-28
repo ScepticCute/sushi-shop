@@ -81,6 +81,12 @@
         background-color: var(--orange);
         color: var(--white);
       }
+      &:active {
+        background-color: var(--darky-orange);
+        color: white;
+        transition: .1s ease;
+        transform: scale(.98);
+      }
     }
   }
 

@@ -29,7 +29,6 @@ export const Home = () => {
               <Skeleton key={i} />
             ))}
           </div>
-          <Pagination />
         </div>
       </div>
     );
