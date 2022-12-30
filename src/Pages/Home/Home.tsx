@@ -41,7 +41,7 @@ export const Home = () => {
         <Filter />
         <div className={styles.sushi}>
           {data.length ? (
-            data.map((sushi: ISushi, i: number) => <SushiBlock {...sushi} key={i} />)
+            data.map((sushi: ISushi, i: number) => <SushiBlock {...sushi} key={Number(i)} />)
           ) : (
             <NotFoundBlock text="Суши кончились... Вернитесь на прошлую страницу!" />
           )}

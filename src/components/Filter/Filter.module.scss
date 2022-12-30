@@ -46,7 +46,7 @@
       color: var(--white);
 
       &:hover {
-        background: var(--darky-orange);
+        background: var(--orange);
       }
     }
   }
@@ -88,4 +88,15 @@
   .filters {
     overflow-y: scroll;
   }
+}
+
+// Animation 
+
+.open_filter_exit_active {
+  opacity: 0;
+
+}
+.open_filter_exit_done {
+  opacity: 0;
+
 }

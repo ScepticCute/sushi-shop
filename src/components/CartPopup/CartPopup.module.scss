@@ -1,7 +1,7 @@
 .wrapper {
   position: fixed;
   background: var(--grayish-white);
-  box-shadow: -7px 0px 8px 6px rgba(34, 60, 80, 0.05);
+  box-shadow: -7px 0px 8px 6px rgba(53, 86, 112, 0.05);
   padding: 20px;
   right: 0;
   top: 0;
@@ -51,11 +51,17 @@
       height: 30px;
       text-align: center;
       color: var(--darky-orange);
-      font-weight: 300;
-      border: 1px solid var(--orange);
-      background-color: var(--bg-grey-button);
+      font-weight: 900;
+      border: none;
+      background-color: var(--grayish-white);
       border-radius: 100%;
       cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: var(--box-shadow);
+      &:hover {
+        background-color: var(--orange);
+        color: var(--grayish-white);
+      }
     }
   }
 
@@ -134,15 +140,16 @@
         }
       }
       .button_remove_one_sushi {
-        color: var(--orange)
+        color: var(--orange);
       }
       .button_remove_all_sushi {
-        background-color:#D22B2B;
+        background-color: #d22b2b;
         color: var(--grayish-white);
+        &:hover {
+          box-shadow: 0px 0px 18px 0px rgba(255, 0, 11, 0.5);
+        }
       }
-      
     }
-    
   }
 
   .buy_button {
@@ -165,16 +172,19 @@
     &:active {
       background-color: var(--darky-orange);
       color: white;
-      transition: .1s ease;
-      transform: scale(.98);
+      transition: 0.1s ease;
+      transform: scale(0.98);
     }
-    
   }
 }
 
 @media (max-width: 1000px) {
   .wrapper {
+    right: 0;
     max-width: 50%;
+    .close_button {
+      transform: scale(1.4);
+    }
     .sushi {
       flex-direction: column;
       max-width: 100%;
@@ -184,25 +194,6 @@
       .buttons_wrapper {
         justify-content: space-around;
       }
-      
-    }  
+    }
   }
-}
-
-// Animation
-
-.cart_popup_enter_active {
-  opacity: 0;
-  transform: scale(0.9);
-}
-.cart_popup_enter_done {
-  transform: scale(1);
-
-  opacity: 1;
-}
-.cart_popup_exit_active {
-  
-}
-.cart_popup_exit {
-  
 }

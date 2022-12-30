@@ -6,6 +6,7 @@ import { FilterPopup } from '../FilterPopup/FilterPopup';
 import { setCategory, setPage } from '../../redux/slices/filterSlice';
 
 import { sortType } from '../../models/IFilter';
+import { CSSTransition } from 'react-transition-group';
 
 const sortArray: sortType[] = [
   { name: 'название', sort: 'title' },
@@ -49,11 +50,16 @@ export const Filter: React.FC = () => {
         <span onClick={onClickPopupSort} className={styles.sort}>
           {currentSort?.name}
         </span>
-        {isOpen ? (
+        <CSSTransition
+          in={isOpen}
+          unmountOnExit
+          timeout={300}
+          classNames={{
+            exitActive: styles.open_filter_exit_active,
+            exitDone: styles.open_filter_exit_done,
+          }}>
           <FilterPopup setOpenPopup={setOpen} orderArray={orderArray} sortArray={sortArray} />
-        ) : (
-          ''
-        )}
+        </CSSTransition>
       </div>
     </div>
   );

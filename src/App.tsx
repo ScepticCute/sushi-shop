@@ -7,13 +7,27 @@ import { Header } from './components/Header/Header';
 import { Home } from './Pages/Home/Home';
 import { NotFoundBlock } from './components/NotFoundBlock/NotFoundBlock';
 import { About } from './Pages/About/About';
+import { CSSTransition } from 'react-transition-group';
+
+import styles from './App.module.scss';
 
 function App() {
   const cartPopupIsOpen = useAppSelector((state) => state.cart.isOpen);
 
   return (
     <div className="App">
-      {cartPopupIsOpen ? <CartPopup /> : ''}
+      <CSSTransition
+        in={cartPopupIsOpen}
+        unmountOnExit
+        timeout={300}
+        classNames={{
+          enterActive: styles.open_cart_enter_active,
+          enterDone: styles.open_cart_enter_done,
+          exitActive: styles.open_cart_exit_active,
+          exitDone: styles.open_cart_exit_done,
+        }}>
+        <CartPopup />
+      </CSSTransition>
 
       <Header />
       <Routes>

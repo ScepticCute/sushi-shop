@@ -1,0 +1,38 @@
+.open_cart {
+  &_enter_active {
+    right: -320px;
+  }
+  &_enter_done {
+    transition: 0.3s ease-out;
+    right: 0px;
+  }
+  &_exit_active {
+    transition: 0.3s ease-out;
+    right: -320px;
+  }
+  &_exit_done {
+    transition: 0.3s ease-out;
+    right: 0px;
+  }
+}
+
+@media (max-width: 1000px) {
+  
+  .open_cart {
+    &_enter_active {
+      right: -550px;
+    }
+    &_enter_done {
+      transition: 0.3s ease-out;
+      right: 0px;
+    }
+    &_exit_active {
+      transition: .5s ease-out;
+      right: -550px;
+    }
+    &_exit_done {
+      transition: .5s ease-out;
+      right: 0px;
+    }
+  }
+}

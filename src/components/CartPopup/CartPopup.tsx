@@ -61,12 +61,12 @@ export const CartPopup: React.FC<ICartPopup> = () => {
             <img className={styles.sushi_img} src={item.imageUrl} alt="sushi" />
             <div className={styles.buttons_wrapper}>
               <button
-                className={styles.button_remove_one_sushi}
+                className={styles.button_remove_all_sushi}
                 onClick={() => onClickRemoveFromCartAll(item)}>
                 Убрать роллы
               </button>
               <button
-                className={styles.button_remove_all_sushi}
+                className={styles.button_remove_one_sushi}
                 onClick={() => onClickRemoveFromCartOne(item)}>
                 Убрать ролл
               </button>

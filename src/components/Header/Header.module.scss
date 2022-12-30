@@ -30,7 +30,7 @@
   &_list {
     display: flex;
     list-style: none;
-    gap: 40px;
+    gap: 30px;
 
     a {
       color: var(--black);
@@ -39,11 +39,10 @@
     }
 
     &_item {
+      border-radius: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: var(--light-grey);
-
       transition: var(--transition);
 
       border: none;
@@ -214,9 +213,9 @@
 
   opacity: 1;
 }
-.open_burger_menu_exit_active {
+// .open_burger_menu_exit_active {
 
-}
-.open_burger_menu_exit {
+// }
+// .open_burger_menu_exit {
   
-}
+// }

@@ -65,30 +65,16 @@ export const Header: React.FC = () => {
         <FiAlignJustify />
       </div>
 
-      <CSSTransition in={burgerIsOpen} timeout={300} unmountOnExit classNames={{
-        enterActive: styles.open_burger_menu_enter_active,
-        enterDone: styles.open_burger_menu_enter_done,
-        exitActive: styles.open_burger_menu_exit_active,
-        exitDone: styles.open_burger_menu_exit
-      }}>
-        
-      <div className={styles.open_burger_menu}>
-          <nav className={styles.nav}>
-            <ul className={styles.nav_list}>
-              {routesArray.map((data, i) => (
-                <Link to={data.route} key={i}>
-                  <li className={styles.nav_list_item} onClick={() => setOpenBurger(false)}>
-                    {data.name}
-                  </li>
-                </Link>
-              ))}
-            </ul>
-          </nav>
-        </div>
-
-        </CSSTransition>
-
-      {/* {burgerIsOpen ? (
+      <CSSTransition
+        in={burgerIsOpen}
+        timeout={300}
+        unmountOnExit
+        classNames={{
+          enterActive: styles.open_burger_menu_enter_active,
+          enterDone: styles.open_burger_menu_enter_done,
+          exitActive: styles.open_burger_menu_exit_active,
+          exitDone: styles.open_burger_menu_exit,
+        }}>
         <div className={styles.open_burger_menu}>
           <nav className={styles.nav}>
             <ul className={styles.nav_list}>
@@ -102,9 +88,7 @@ export const Header: React.FC = () => {
             </ul>
           </nav>
         </div>
-      ) : (
-        ''
-      )} */}
+      </CSSTransition>
     </div>
   );
 };
