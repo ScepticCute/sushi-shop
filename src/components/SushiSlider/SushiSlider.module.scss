@@ -6,6 +6,7 @@
   background-color: var(--creamy);
   box-shadow: 3px 0px 27px -5px rgba(34, 60, 80, 0.36);
   .slide {
+    margin-top: 8px;
     width: 200px !important;
     height: 240px;
     overflow: hidden;
@@ -16,7 +17,6 @@
 
     &:hover {
       box-shadow: var(--box-shadow);
-
     }
 
     .slide_img {

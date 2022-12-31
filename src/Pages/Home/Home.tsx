@@ -43,7 +43,12 @@ export const Home = () => {
           {data.length ? (
             data.map((sushi: ISushi, i: number) => <SushiBlock {...sushi} key={Number(i)} />)
           ) : (
-            <NotFoundBlock text="Суши кончились... Вернитесь на прошлую страницу!" />
+            <NotFoundBlock
+              text={
+                `Суши кончились... Но вы можете нажать на кнопку ниже`
+              }
+              goHome={true}
+            />
           )}
         </div>
         <Pagination />

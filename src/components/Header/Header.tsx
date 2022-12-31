@@ -24,10 +24,7 @@ export const Header: React.FC = () => {
 
   const routesArray = [
     { route: '/', name: 'Магазин' },
-    { route: '/about', name: 'Где мы?' },
-    { route: '/', name: 'Пустышка' },
-    { route: '/', name: 'Пустышка' },
-    { route: '/', name: 'Пустышка' },
+    { route: '/about', name: 'О нас' },
   ];
 
   return (
