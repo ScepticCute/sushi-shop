@@ -74,6 +74,7 @@
 
 		.middle__flexbox_wrapper {
 			max-width: 100%;
+			min-width: 300px;
 			display: flex;
 			justify-content: space-around;
 			align-items: center;
@@ -88,7 +89,7 @@
 					display: flex;
 					align-items: center;
 					justify-content: center;
-					min-width: 300px;
+					min-width: 240px;
 					max-width: 400px;
 					box-shadow: var(--box-shadow);
 				}
@@ -135,6 +136,17 @@
 			flex-direction: column-reverse;
 		}
 	}
+
+	.footer__text {
+		padding: 10px;
+	}
+
+	.footer__icons {
+		flex-direction: column;
+		gap: 0px !important;
+			li {
+		}
+	}	
 }
 
 // Animations
