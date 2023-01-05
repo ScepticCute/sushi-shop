@@ -4,9 +4,10 @@
   border-radius: 30px;
   text-align: center;
   justify-content: center;
-  width: 600px;
+  max-width: 600px;
   margin: 20px auto;
   padding: 20px;
+  overflow-x: scroll;
 
   .page {
     box-shadow: var(--box-shadow);
@@ -24,7 +25,7 @@
 
     &:hover {
       background-color: var(--orange);
-      color: var(--white)
+      color: var(--white);
     }
 
     &_active {
