@@ -62,11 +62,11 @@ export const About: React.FC = () => {
         </div>
         <div className={styles.middle__flexbox_wrapper}>
           <div className={styles.middle__block_wrap}>
-            <img src={middleImg4} />
-          </div>
-          <div className={styles.middle__block_wrap}>
             <h1>Lorem Ipsum</h1>
             <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
+          </div>
+          <div className={styles.middle__block_wrap}>
+            <img src={middleImg4} />
           </div>
         </div>
       </section>
