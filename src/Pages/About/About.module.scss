@@ -108,11 +108,12 @@
 			border-right: 1px solid var(--light-grey);
 			padding: 30px;
 		}
-		.footer__icons {
+		.footer__icons {	
 			list-style: none;
 			display: flex;
 			align-items: center;
 			gap: 20px;
+				justify-content: center;
 			li {
 				transition: .2s ease;
 				opacity: .7;
@@ -132,7 +133,7 @@
 	.middle__flexbox_wrapper {
 		flex-direction: column;
 
-		&:nth-child(2) {
+		&:nth-child(odd) {
 			flex-direction: column-reverse;
 		}
 	}

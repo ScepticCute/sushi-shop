@@ -36,3 +36,30 @@
     }
   }
 }
+
+@media (max-width: 550px) {
+  .open_cart {
+    &_enter_active {
+      opacity: 0;
+      right: 0;
+    }
+    &_enter_done {
+      transition: .5s ease-out;
+      opacity: 1;
+      right: 0;
+
+    }
+    &_exit_active {
+      transition: .5s ease-out;
+      opacity: 0;      
+      right: 0;
+
+    }
+    &_exit_done {
+      transition: .5s ease-out;
+      opacity: 0;      
+      right: 0;
+
+    }
+  }
+}

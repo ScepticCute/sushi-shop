@@ -62,11 +62,11 @@ export const About: React.FC = () => {
         </div>
         <div className={styles.middle__flexbox_wrapper}>
           <div className={styles.middle__block_wrap}>
-            <h1>Lorem Ipsum</h1>
-            <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
+            <img src={middleImg4} />
           </div>
           <div className={styles.middle__block_wrap}>
-            <img src={middleImg4} />
+            <h1>Lorem Ipsum</h1>
+            <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </p>
           </div>
         </div>
       </section>
@@ -77,18 +77,6 @@ export const About: React.FC = () => {
           <p> lorem ipsum lorem ipsum </p>
         </div>
         <ul className={styles.footer__icons}>
-          <li>
-            <a href="https://github.com/ScepticCute" target="_blank">
-              {' '}
-              <img src={githubIcon} alt="github" />{' '}
-            </a>{' '}
-          </li>
-          <li>
-            <a href="https://github.com/ScepticCute" target="_blank">
-              {' '}
-              <img src={githubIcon} alt="github" />{' '}
-            </a>{' '}
-          </li>
           <li>
             <a href="https://github.com/ScepticCute" target="_blank">
               {' '}
